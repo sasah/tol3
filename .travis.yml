@@ -4,8 +4,7 @@ services:
   - docker
 
 script:
-  - echo "$(pwd)"
-  - ls -l
   - docker run --rm -v "$(pwd)":/work -w /work sasah/maven mvn clean package
-  - ls -l
-  - docker build --no-cache --pull -t sasah/tol3 .
+  - docker build --no-cache --pull -t sasah/tol3:latest .
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker push sasah/tol3:latest
