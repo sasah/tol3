@@ -3,5 +3,4 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker run --rm -v "$(pwd)":/work -w /work sasah/maven mvn clean package
+script: docker run --rm -v "$(pwd)":/work -w /work sasah/maven mvn clean package
