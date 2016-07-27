@@ -4,4 +4,4 @@ services:
   - docker
 
 before_install:
-  - docker run --rm -v "$(pwd)":/work -w work sasah/maven mvn clean package
+  - docker run --rm -v "$(pwd)":/work -w /work sasah/maven mvn clean package
