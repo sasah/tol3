@@ -7,3 +7,5 @@ script:
   - echo "$(pwd)"
   - ls -l
   - docker run --rm -v "$(pwd)":/work -w /work sasah/maven mvn clean package
+  - ls -l
+  - docker build --no-cache --pull -t sasah/tol3 .
